@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Thank you for your order, {{ student_name }}!</p>
+    <p>You have ordered {{ quantity }} {{ item_name }}(s).</p>
+    <p>Your total cost is ${{ total_price }}</p>
+    <p>Order placed successfully!</p>
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+</body>
+</html>

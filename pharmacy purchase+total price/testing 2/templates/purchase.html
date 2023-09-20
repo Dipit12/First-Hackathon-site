@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Purchase</title>
+</head>
+<body>
+    <h1>Student Purchase</h1>
+    <form method="POST">
+        <label for="student_name">Student Name:</label>
+        <input type="text" id="student_name" name="student_name" required><br>
+
+        <label for="item_id">Select Item:</label>
+        <select id="item_id" name="item_id" required>
+            {% for item in inventory_items %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br>
+
+        <input type="submit" value="Purchase">
+    </form>
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+</body>
+</html>
