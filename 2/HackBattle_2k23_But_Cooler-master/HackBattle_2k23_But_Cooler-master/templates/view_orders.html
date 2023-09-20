@@ -1,0 +1,50 @@
+<!-- view_orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary headers -->
+</head>
+<style>
+    button {
+            background-color: #090e0a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+
+</style>
+<body>
+    <h1 align="center">Orders for {{ item.name }}</h1>
+    <table align="center" cellspacing="10" width = 60%>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td align="center">{{ order.student_name }}</td>
+                <td align="center">{{ order.quantity }}</td>
+                <td align="center">₹{{ order.total_price }}</td>
+                <td align="center">
+                    <form method="post" action="{{ url_for('cancel_order', order_id=order.id) }}">
+                        <button type="submit" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';" type="submit">Cancel</button>
+                    </form> <br>
+                    <form method="post" action="{{ url_for('cancel_order', order_id=order.id) }}">
+                        <button type="submit" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';" type="submit">Fulfill</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div align="center">
+    <a href="{{ url_for('index') }}" ,align="center" margin="20" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';" type="submit">Back to Inventory List</a>
+    </div>
+</body>
+</html>

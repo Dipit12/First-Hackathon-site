@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .confirmation-message {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .total-cost {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <div class="container">
+        <p class="confirmation-message">Thank you for your order, {{ student_name }}!</p>
+        <p>You have ordered {{ quantity }} {{ item_name }}(s).</p>
+        <p class="total-cost">Your total cost is ₹{{ total_price }}</p>
+        <p>Order placed successfully!</p>
+        <a href="{{ url_for('purchase') }}">Back to Dashboard</a> <!-- Add this line -->
+    </div>
+</body>
+</html>

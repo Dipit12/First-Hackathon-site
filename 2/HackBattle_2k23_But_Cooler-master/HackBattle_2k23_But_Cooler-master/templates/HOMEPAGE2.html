@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            overflow: hidden; /* Hide overflow to prevent horizontal scroll */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            position: relative; /* Add position relative for button animation */
+        }
+
+        .big-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transform: translateX(-100%); /* Initial position - outside left */
+            transition: transform 1s ease-in-out; /* Transition for sliding effect */
+        }
+
+        /* Add animation to the big-button class for automatic slide-in */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .big-button.loaded {
+            animation: slideIn 1s ease-in-out; /* Apply animation when the class is loaded */
+            transform: translateX(0); /* Keep the buttons in the center */
+        }
+
+        .small-button {
+            padding: 10px 20px;
+            font-size: 50px;
+            background-color: rgba(255,255,255,0.5);
+            
+            color: #fff;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        /* Add CSS for the background image */
+        body {
+            background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTXnnShZHcVqXi7CVSbKD-ZMR03QxKrZPv7kCtnsrWv42FUPvND");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <marquee direction="right">
+        <b>MEDICINES DELIVERED DIRECTLY TO YOUR HOSTELS!!</b>
+    </marquee>
+    <center>
+	<style>
+        .shifted-text {
+            margin-top: 20px; /* Adjust the margin-top value as needed */
+        }
+    </style>
+	
+        <h1><br><br><br>WELCOME TO VIT PHARMACY</h1>
+
+    </center>
+</body>
+</head>
+<body>
+<div class="button-container">
+    <a href="{{url_for('login')}}">
+        <button class="big-button">LOGIN FOR CUSTOMER</button>
+    </a>
+    <a href="login_page.html">
+        <button class="big-button">LOGIN FOR PHARMACIST</button>
+    </a>
+    <a href="{{url_for('register')}}">
+        <button class="big-button">REGISTRATION</button>
+    </a>
+</div>
+<div class="topright">
+    <a href="about.html">
+        <button class="small-button",align="right" ><p style =" color:black;">ABOUT</p></button>
+    </a>
+    <a href="contact.html">
+        <button class="small-button",align="right"><p style =" color:black;">CONTACT US</p></button>
+    </a>
+    <a href="https://www.roquette.com/-/media/contenus-gbu/pharma/documentation/roquette-pharma-product_catalog-2019-10-546.pdf">
+        <button class="small-button",align="right"><p style =" color:black;">BROCHURE</p></button>
+    </a>
+</div>
+</center>
+<script>
+    // Add a class to trigger the animation when the page loads
+    window.addEventListener('load', function() {
+        document.querySelectorAll('.big-button').forEach(function(button) {
+            button.classList.add('loaded');
+        });
+    });
+</script>
+</body>
+</html>

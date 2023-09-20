@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+        <style>
+            body {
+              background-image: url("https://github.com/D00M1909/DOOMSTADT/blob/main/html_basics_rev/background.jpg?raw=true");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+            }
+        </style>
+    <center>
+    <h1>Registration Page</h1>
+    <form action="" method="POST">
+        <label>Username:</label><br>
+        {{ form.hidden_tag() }}
+
+        {{ form.username }}<br>
+
+        <label>Password:</label><br>
+        {{ form.password }}<br><br>
+
+        {{ form.submit }}
+    </form>
+    </center>
+</body>
+</html>

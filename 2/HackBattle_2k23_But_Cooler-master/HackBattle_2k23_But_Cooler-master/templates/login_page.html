@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    
+        <style>
+            body {
+              background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTXnnShZHcVqXi7CVSbKD-ZMR03QxKrZPv7kCtnsrWv42FUPvND");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+            }
+        </style> 
+    <center>
+    <h1>Login Page</h1> 
+    <form action="" method="POST">
+        <label fontsize="40">Username:</label><br><br>
+        {{ form.hidden_tag() }}
+
+        {{ form.username }}<br><br>
+        
+        <label>Password:</label><br><br>
+        {{ form.password }}<br><br><br>
+        
+        <button type="submit" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';" type="submit">Login</button>
+    </form>
+    </center>
+</body>
+</html>
