@@ -1,0 +1,40 @@
+<!-- view_orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary headers -->
+</head>
+<body>
+    <h1>Orders for {{ item.name }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.student_name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>₹{{ order.total_price }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('cancel_order', order_id=order.id) }}">
+                        <button type="submit">Cancel</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="{{ url_for('fulfill_order', order_id=order.id) }}">
+                        <button type="submit">Fulfill</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Inventory List</a>
+</body>
+</html>
